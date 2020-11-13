@@ -1,6 +1,8 @@
-package com.example.mvvmroomdatabase
+package com.example.mvvmroomdatabase.domain.repository
 
 import androidx.lifecycle.LiveData
+import com.example.mvvmroomdatabase.data.EmployeeDao
+import com.example.mvvmroomdatabase.domain.Employee
 
 class EmployeeRepository(private val employeeDao: EmployeeDao) {
 

@@ -1,20 +1,21 @@
-package com.example.mvvmroomdatabase
+package com.example.mvvmroomdatabase.domain
 
 import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
+import com.example.mvvmroomdatabase.data.EmployeeDao
 
 @Database(entities = [Employee::class],version = 1,exportSchema = false)
 abstract class EmployeeDatabase : RoomDatabase(){
 
-    abstract fun employeeDao():EmployeeDao
+    abstract fun employeeDao(): EmployeeDao
 
     companion object{
         @Volatile
         private var INSTANCE : EmployeeDatabase?=null
 
-        fun getDatabase(context: Context):EmployeeDatabase{
+        fun getDatabase(context: Context): EmployeeDatabase {
             val tempInstance = INSTANCE
             if(tempInstance!=null)
             {
@@ -28,7 +29,7 @@ abstract class EmployeeDatabase : RoomDatabase(){
                     EmployeeDatabase::class.java,
                     "employee_database"
                 ).build()
-                INSTANCE=instance
+                INSTANCE =instance
                 return instance
             }
         }

@@ -26,6 +26,7 @@ android {
 }
 
 dependencies {
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
     def lifecycle_version = "2.2.0"
     def arch_version = "2.1.0"
     implementation fileTree(dir: "libs", include: ["*.jar"])
@@ -60,8 +61,8 @@ dependencies {
     // Saved state module for ViewModel
     implementation "androidx.lifecycle:lifecycle-viewmodel-savedstate:$lifecycle_version"
 
-    implementation project(':data')
-    implementation project(':domain')
+   /* implementation project(':data')
+    implementation project(':domain')*/
     implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
