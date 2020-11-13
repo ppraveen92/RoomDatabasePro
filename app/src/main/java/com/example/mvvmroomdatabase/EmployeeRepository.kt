@@ -6,7 +6,7 @@ class EmployeeRepository(private val employeeDao: EmployeeDao) {
 
 
     val readAlltheData:LiveData<List<Employee>> = employeeDao.getAllEmployee()
-    suspend fun addEmployee(employee:Employee){
+    suspend fun addEmployee(employee: Employee){
 
         employeeDao.addEmployee(employee)
     }
