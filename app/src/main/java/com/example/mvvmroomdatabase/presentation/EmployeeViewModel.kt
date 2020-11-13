@@ -11,16 +11,16 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
 class EmployeeViewModel(application: Application) :AndroidViewModel(application) {
-    private val getAllEmployee:LiveData<List<Employee>>
+     val allEmployee:LiveData<List<Employee>>
     private val repository : EmployeeRepository
 
     init {
         val employeeDao = EmployeeDatabase.getDatabase(application).employeeDao()
         repository = EmployeeRepository(employeeDao)
-        getAllEmployee =repository.readAlltheData
+        allEmployee =repository.readAlltheData
     }
 
-    fun addEmployee(employee: Employee){
+    fun getAllEmployee(employee: Employee){
         viewModelScope.launch ( Dispatchers.IO ){
             repository.addEmployee(employee)
         }

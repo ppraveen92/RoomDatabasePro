@@ -46,7 +46,7 @@ class AddFragment : Fragment() {
         val salary = editsalary.text.toString()
 
         val employee = Employee(0,name,design,Integer.parseInt(salary))
-        viewModel.addEmployee(employee)
+        viewModel.getAllEmployee(employee)
         Toast.makeText(requireContext(),"Successful", Toast.LENGTH_SHORT).show()
         findNavController().navigate(R.id.action_addFragment_to_listFragment)
 
