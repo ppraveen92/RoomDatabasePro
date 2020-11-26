@@ -6,33 +6,28 @@ import androidx.room.Room
 import androidx.room.RoomDatabase
 import com.example.mvvmroomdatabase.data.EmployeeDao
 
-@Database(entities = [Employee::class],version = 1,exportSchema = false)
-abstract class EmployeeDatabase : RoomDatabase(){
-
+@Database(entities = [Employee::class], version = 1, exportSchema = false)
+abstract class EmployeeDatabase : RoomDatabase() {
     abstract fun employeeDao(): EmployeeDao
 
-    companion object{
-        @Volatile
-        private var INSTANCE : EmployeeDatabase?=null
-
+    companion object {
+        private var INSTANCE: EmployeeDatabase? = null
         fun getDatabase(context: Context): EmployeeDatabase {
             val tempInstance = INSTANCE
-            if(tempInstance!=null)
-            {
+            if (tempInstance != null) {
                 return tempInstance
             }
 
-            synchronized(this){
+            synchronized(this) {
 
                 val instance = Room.databaseBuilder(
                     context.applicationContext,
                     EmployeeDatabase::class.java,
                     "employee_database"
                 ).build()
-                INSTANCE =instance
+                INSTANCE = instance
                 return instance
             }
         }
     }
-
 }

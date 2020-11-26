@@ -1,0 +1,15 @@
+<resources>
+    <dimen name="fab_margin">16dp</dimen>
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="width_200">200dp</dimen>
+    <dimen name="height_50">50dp</dimen>
+    <dimen name="button_text_20">20sp</dimen>
+    <dimen name="marginn_bottom_20">10dp</dimen>
+    <dimen name="marginn_30">30dp</dimen>
+    <dimen name="linearsize_300">300dp</dimen>
+    <dimen name="textsize_30">30sp</dimen>
+    <dimen name="padding_50">50dp</dimen>
+    <dimen name="marginn_10">10dp</dimen>
+    <dimen name="navigation_drawer_width">240dp</dimen>
+</resources>

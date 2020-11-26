@@ -9,12 +9,9 @@ import com.example.mvvmroomdatabase.domain.Employee
 
 @Dao
 interface EmployeeDao {
-
     @Insert(onConflict = OnConflictStrategy.IGNORE)
-    suspend fun addEmployee( employee: Employee)
+    suspend fun addEmployee(employee: Employee)
 
     @Query("SELECT * FROM employee_table ORDER BY id ASC")
-    fun getAllEmployee():LiveData<List<Employee>>
-
-
+    fun getAllEmployee(): LiveData<List<Employee>>
 }
